@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="result-box">
+
+        <h1>🤖 AI Prediction</h1>
+
+        <h2>Top 3 Predictions</h2>
+
+        {% for prediction in predictions %}
+
+            <div class="prediction">
+                {{ loop.index }}. {{ prediction.name }}
+            </div>
+
+            <div class="confidence">
+                Confidence: {{ prediction.confidence }}%
+            </div>
+
+        {% endfor %}
+
+        <br>
+
+        <a href="/" class="button">
+            Try Another Image
+        </a>
+
+    </div>
+
+</body>
+
+</html>
